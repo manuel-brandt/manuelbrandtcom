@@ -1,0 +1,71 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import NewsletterBox from '../../components/NewsletterBox.astro';
+import Icon from '../../components/Icon.astro';
+import { CATEGORIES } from '../../content.config';
+import { SOCIALS } from '../../site.config';
+import { getPosts, isArticle, formatDate } from '../../lib/posts';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return posts.map((post) => {
+    // previous/next within the same group (articles or notes)
+    const group = posts.filter((p) => isArticle(p) === isArticle(post));
+    const i = group.findIndex((p) => p.id === post.id);
+    return { params: { slug: post.id }, props: { post, newer: group[i - 1], older: group[i + 1] } };
+  });
+}
+
+const { post, newer, older } = Astro.props;
+const { Content, headings } = await render(post);
+const toc = post.data.toc ? headings.filter((h) => h.depth === 2 || h.depth === 3) : [];
+const follow = SOCIALS.filter((s) => s.icon === 'linkedin' || s.icon === 'instagram');
+const showUpdated = post.data.updated && post.data.updated.valueOf() - post.data.date.valueOf() > 30 * 864e5;
+---
+<Base
+  title={post.data.title}
+  description={post.data.description}
+  image={post.data.image}
+  type="article"
+  noindex={post.data.noindex}
+  published={post.data.date}
+  modified={post.data.updated}
+>
+  <article class="wrap">
+    <header class="post-header">
+      <h1>{post.data.title}</h1>
+      <div class="post-meta">
+        <a class="tag" href={`/category/${post.data.category}/`}>{CATEGORIES[post.data.category]}</a>
+        <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+        {showUpdated && <span>· Updated {formatDate(post.data.updated!)}</span>}
+      </div>
+      {post.data.image && <img class="post-hero" src={post.data.image} alt={post.data.imageAlt ?? ''} />}
+    </header>
+
+    {toc.length > 0 && (
+      <details class="toc" open>
+        <summary>Table of Contents</summary>
+        <ul>
+          {toc.map((h) => <li class={`depth-${h.depth}`}><a href={`#${h.slug}`}>{h.text}</a></li>)}
+        </ul>
+      </details>
+    )}
+
+    <div class="prose">
+      <Content />
+    </div>
+
+    <footer class="post-footer">
+      <p>If you want to stay updated, follow me on:</p>
+      <ul class="follow">
+        {follow.map((s) => <li><a href={s.href} target="_blank" rel="noopener"><Icon name={s.icon} />{s.label}</a></li>)}
+      </ul>
+      <nav class="post-nav" aria-label="More posts">
+        {older && <a class="prev" href={`/blog/${older.id}/`}><span>← Previous</span>{older.data.title}</a>}
+        {newer && <a class="next" href={`/blog/${newer.id}/`}><span>Next →</span>{newer.data.title}</a>}
+      </nav>
+      <NewsletterBox compact />
+    </footer>
+  </article>
+</Base>

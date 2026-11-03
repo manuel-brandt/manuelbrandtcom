@@ -1,0 +1,36 @@
+---
+import Base from '../layouts/Base.astro';
+
+// Add or reorder handbook entries here. `slug` is the article's filename in src/content/blog/.
+const sections = [
+  {
+    title: 'Management',
+    items: [
+      { label: 'Managing Your Company', slug: 'eos-management-system' },
+      { label: 'Strategy Planning', slug: 'build-company-strategy' },
+      { label: 'Creating Focus', slug: 'creating-focus' },
+    ],
+  },
+  {
+    title: 'Growth / Marketing',
+    items: [{ label: 'Acquiring First Customers', slug: 'generating-your-first-users-when-bootstrapping' }],
+  },
+  {
+    title: 'Lessons Learned',
+    items: [{ label: 'Bootstrapping a Startup to $100K: 5 Lessons Learned', slug: 'lessons-learned-bootstrapping-a-startup-to-100k' }],
+  },
+];
+---
+<Base title="Startup Handbook" description="My favorite notes and articles on building startups, divided into categories." image="/images/elementor/thumbs/Featured-Image-qed04gb9buxfwnb04y6b2veod6wvuwaulwd8dudxmw.jpg">
+  <div class="wrap prose">
+    <h1>Startup Handbook</h1>
+    <img class="banner" src="/images/elementor/thumbs/Featured-Image-qed04gb9buxfwnb04y6b2veod6wvuwaulwd8dudxmw.jpg" alt="Startup Handbook – Notes on Startups" />
+    <p>This “Startup Handbook” is a list of my favorite notes and articles on building startups, divided into different categories. With publishing more articles, it gets constantly updated.</p>
+    {sections.map((s, i) => (
+      <>
+        <h2>{i + 1} – {s.title}</h2>
+        <ul>{s.items.map((it) => <li><a href={`/blog/${it.slug}/`}>{it.label}</a></li>)}</ul>
+      </>
+    ))}
+  </div>
+</Base>

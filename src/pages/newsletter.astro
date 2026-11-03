@@ -1,0 +1,11 @@
+---
+import Base from '../layouts/Base.astro';
+import NewsletterBox from '../components/NewsletterBox.astro';
+import { NEWSLETTER } from '../site.config';
+---
+<Base title={`Newsletter: ${NEWSLETTER.title}`} description="Journey of a startup founder: get every new post from my blog via newsletter.">
+  <div class="wrap">
+    <h1>Newsletter: {NEWSLETTER.title}</h1>
+    <NewsletterBox />
+  </div>
+</Base>

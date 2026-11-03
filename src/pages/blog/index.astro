@@ -1,0 +1,27 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostList from '../../components/PostList.astro';
+import { CATEGORIES } from '../../content.config';
+import { getPosts, isArticle } from '../../lib/posts';
+
+const posts = await getPosts();
+const articles = posts.filter(isArticle);
+const notes = posts.filter((p) => !isArticle(p));
+const chips = (['personal', 'self-growth', 'business', 'book-notes'] as const).map((c) => ({ slug: c, label: CATEGORIES[c] }));
+---
+<Base title="Blog" description="Learnings from building online businesses, and things I learn in my private life.">
+  <div class="wrap">
+    <h1>Blog</h1>
+    <p>On my blog, I’m sharing my learnings from building online businesses and things I learn in my private life.</p>
+    <ul class="chips">
+      {chips.map((c) => <li><a href={`/category/${c.slug}/`}>{c.label}</a></li>)}
+    </ul>
+
+    <h2 class="section-title">Recent Articles</h2>
+    <PostList posts={articles} />
+
+    <h2 class="section-title">Book & Podcast Notes 📚</h2>
+    <p>Short notes and key takeaways from books, podcasts, and courses I went through.</p>
+    <PostList posts={notes} showCategory={false} />
+  </div>
+</Base>

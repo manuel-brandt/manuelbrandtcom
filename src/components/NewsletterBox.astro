@@ -1,0 +1,19 @@
+---
+import { NEWSLETTER } from '../site.config';
+interface Props { compact?: boolean }
+const { compact = false } = Astro.props;
+---
+<section class:list={['newsletter-box', { compact }]}>
+  {compact ? <h2>Don’t miss any post</h2> : null}
+  <p>{compact ? 'Get new articles straight to your inbox or LinkedIn feed.' : 'Stay updated on everything I post on my blog by following my newsletter.'}</p>
+  <div class="newsletter-actions">
+    {NEWSLETTER.emailFormAction && (
+      <form action={NEWSLETTER.emailFormAction} method="post" class="email-form">
+        <label class="sr-only" for="nl-email">Email</label>
+        <input id="nl-email" type="email" name={NEWSLETTER.emailFieldName} placeholder="you@example.com" required />
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+    )}
+    <a class="btn btn-linkedin" href={NEWSLETTER.linkedinUrl} target="_blank" rel="noopener">Subscribe on LinkedIn</a>
+  </div>
+</section>
