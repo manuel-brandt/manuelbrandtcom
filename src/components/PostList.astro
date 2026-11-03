@@ -1,0 +1,16 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { CATEGORIES } from '../content.config';
+import { formatDate } from '../lib/posts';
+interface Props { posts: CollectionEntry<'blog'>[]; showCategory?: boolean }
+const { posts, showCategory = true } = Astro.props;
+---
+<ul class="post-list">
+  {posts.map((p) => (
+    <li>
+      {showCategory && <a class="tag" href={`/category/${p.data.category}/`}>{CATEGORIES[p.data.category]}</a>}
+      <a class="post-link" href={`/blog/${p.id}/`}>{p.data.title}</a>
+      <time datetime={p.data.date.toISOString()}>{formatDate(p.data.date)}</time>
+    </li>
+  ))}
+</ul>

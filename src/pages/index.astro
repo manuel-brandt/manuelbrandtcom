@@ -1,0 +1,44 @@
+---
+import Base from '../layouts/Base.astro';
+import PostList from '../components/PostList.astro';
+import Icon from '../components/Icon.astro';
+import { SITE, PROJECTS, SOCIALS } from '../site.config';
+import { getPosts, isArticle } from '../lib/posts';
+
+const recent = (await getPosts()).filter(isArticle).slice(0, 3);
+const instagram = SOCIALS.find((s) => s.icon === 'instagram')!;
+---
+<Base>
+  <div class="wrap">
+    <section class="hero">
+      <img src="/images/2024/10/Edit-2-1024x1024.jpg" alt="Portrait of Manuel Brandt" width="240" height="240" />
+      <div>
+        <h1>Hi, I'm Manuel.</h1>
+        <p>Based between Taiwan and Germany, I spend my days building and growing digital service and software products, reading books, and enjoying a simple life.</p>
+        <p>Read more about me <a href="/about/">here</a>.</p>
+        <ul class="locations">
+          {SITE.locations.map((l) => <li><a href={l.href} target="_blank" rel="noopener"><Icon name="pin" />{l.label}</a></li>)}
+        </ul>
+      </div>
+    </section>
+
+    <h2 class="section-title">My Projects</h2>
+    <div class="projects">
+      {PROJECTS.map((p) => (
+        <div class="project">
+          <a href={p.href} target="_blank" rel="noopener"><img src={p.logo} alt={`${p.name} logo`} width="104" height="104" /></a>
+          <h3><a href={p.href} target="_blank" rel="noopener">{p.name} <Icon name="external" size={18} /></a></h3>
+          <p>{p.description}</p>
+        </div>
+      ))}
+    </div>
+
+    <h2 class="section-title">Recent Articles</h2>
+    <PostList posts={recent} showCategory={false} />
+    <p class="center"><a class="btn" href="/blog/">All Posts <Icon name="arrow" /></a></p>
+
+    <h2 class="section-title">Find Me On Instagram 📸</h2>
+    <p>Photos from road trips, travels, and everyday life between Taiwan and Germany.</p>
+    <p><a class="btn" href={instagram.href} target="_blank" rel="noopener"><Icon name="instagram" /> @manuel_brandt</a></p>
+  </div>
+</Base>
