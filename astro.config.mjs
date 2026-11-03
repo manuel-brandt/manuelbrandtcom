@@ -18,10 +18,4 @@ export default defineConfig({
         !page.endsWith('/category/book-notes/') && !noindexSlugs.some((s) => page.endsWith(`/blog/${s}/`)),
     }),
   ],
-  redirects: {
-    '/feed': '/rss.xml',
-    '/blog/feed': '/rss.xml',
-    // Startup Handbook is hidden (source kept in src/pages/_startup-handbook.astro)
-    '/startup-handbook': '/blog/',
-  },
 });

@@ -16,7 +16,7 @@ all content lives in this repository and is edited by changing files (usually by
 | Name, nav menu, "My Lists", social links, projects, newsletter links | `src/site.config.ts` |
 | Categories (allowed values) | `CATEGORIES` in `src/content.config.ts` |
 | Home / About / Newsletter pages | `src/pages/index.astro`, `about.astro`, `newsletter.astro` |
-| Startup Handbook (currently **hidden**) | `src/pages/_startup-handbook.astro` – the `_` prefix keeps it out of the build; rename to `startup-handbook.astro`, re-add it to `NAV` and remove its redirect in `astro.config.mjs` to show it again |
+| Startup Handbook (currently **hidden**) | `src/pages/_startup-handbook.astro` – the `_` prefix keeps it out of the build; rename to `startup-handbook.astro`, re-add it to `NAV` and remove its redirect in `vercel.json` to show it again |
 | Instagram grid on the homepage | `src/data/instagram.json` + `public/images/instagram/` (static, updated by prompt) |
 | Styling | `src/styles/global.css` |
 
@@ -41,7 +41,7 @@ Article body in Markdown. Use `##` for sections and `###` for subsections (never
 ## Conventions when editing via prompts
 - New article: create `src/content/blog/<short-kebab-case-slug>.md` with the frontmatter above. Use today's date.
 - Never rename an existing file unless asked – it changes the public URL (and breaks links/SEO).
-  If a rename is requested, add a redirect in `astro.config.mjs` (`redirects`) from the old URL.
+  If a rename is requested, add a permanent redirect in `vercel.json` from the old URL.
 - Images: save into `public/images/<year>/<month>/` and reference with an absolute `/images/...` path.
   Add a caption by putting an `_italic line_` directly under the image.
 - YouTube embeds: `<div class="embed"><iframe src="https://www.youtube.com/embed/<id>" title="..." loading="lazy" allowfullscreen></iframe></div>`

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    { "source": "/wp-content/uploads/:path*", "destination": "/images/:path*", "permanent": true },
+    { "source": "/sitemap_index.xml", "destination": "/sitemap-index.xml", "permanent": true },
+    { "source": "/sitemap.xml", "destination": "/sitemap-index.xml", "permanent": true },
+    { "source": "/wp-sitemap.xml", "destination": "/sitemap-index.xml", "permanent": true },
+    { "source": "/post-sitemap.xml", "destination": "/sitemap-index.xml", "permanent": true },
+    { "source": "/page-sitemap.xml", "destination": "/sitemap-index.xml", "permanent": true },
+    { "source": "/feed", "destination": "/rss.xml", "permanent": true },
+    { "source": "/feed/", "destination": "/rss.xml", "permanent": true },
+    { "source": "/blog/feed/", "destination": "/rss.xml", "permanent": true },
+    { "source": "/category/blogtec/", "destination": "/blog/", "permanent": true },
+    { "source": "/category/uncategorized/", "destination": "/blog/", "permanent": true },
+    { "source": "/startup-handbook/", "destination": "/blog/", "permanent": false },
+    { "source": "/category/book-notes/", "destination": "/blog/", "permanent": false }
+  ]
+}
