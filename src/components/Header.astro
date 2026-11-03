@@ -9,7 +9,7 @@ const path = Astro.url.pathname;
     <nav aria-label="Main">
       <ul class="nav">
         {NAV.map((n) => (
-          <li><a href={n.href} aria-current={path.startsWith(n.href) ? 'page' : undefined}>{n.label}</a></li>
+          <li><a href={n.href} aria-current={(n.href === '/' ? path === '/' : path.startsWith(n.href)) ? 'page' : undefined}>{n.label}</a></li>
         ))}
         <li class="dropdown">
           <details>
