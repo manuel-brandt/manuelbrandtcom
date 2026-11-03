@@ -5,6 +5,7 @@ date: 2024-11-05
 updated: 2025-02-17
 category: book-notes
 noindex: true
+draft: true
 ---
 
 These are my notes on the book “[The Way of the Superior Man](https://www.goodreads.com/book/show/79424.The_Way_of_the_Superior_Man)“. These are just my notes, not my thoughts.

@@ -5,6 +5,7 @@ date: 2024-01-15
 updated: 2025-02-17
 category: book-notes
 noindex: true
+draft: true
 ---
 
 These are my notes on the book from Seth Godin called [This is Marketing](https://www.goodreads.com/book/show/40549476-this-is-marketing). I agree with its overall lesson, and it had some great sections and quotes, however, overall, it was a rather basic read and not as insightful as I hoped to.

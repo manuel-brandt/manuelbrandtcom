@@ -5,6 +5,7 @@ date: 2024-12-22
 updated: 2025-02-17
 category: book-notes
 noindex: true
+draft: true
 ---
 
 -   Economic security is very important. You can have a great life in western countries if you have money. But if you don’t, your life will be hard.

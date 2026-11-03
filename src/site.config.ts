@@ -14,7 +14,6 @@ export const SITE = {
 export const NAV = [
   { label: 'About', href: '/about/' },
   { label: 'Blog', href: '/blog/' },
-  { label: 'Startup Handbook', href: '/startup-handbook/' },
 ];
 
 export const LISTS = [

@@ -1,0 +1,15 @@
+---
+import posts from '../data/instagram.json';
+import Icon from './Icon.astro';
+import { SOCIALS } from '../site.config';
+const profile = SOCIALS.find((s) => s.icon === 'instagram')!;
+---
+<div class="ig-grid">
+  {posts.map((p) => (
+    <a href={p.url} target="_blank" rel="noopener" title={p.caption}>
+      <img src={p.image} alt={p.caption || 'Instagram post'} loading="lazy" width="320" height="320" />
+      <span class="ig-caption">{p.caption}</span>
+    </a>
+  ))}
+</div>
+<p class="center"><a class="btn" href={profile.href} target="_blank" rel="noopener"><Icon name="instagram" /> Follow @manuel_brandt</a></p>

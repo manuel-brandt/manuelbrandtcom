@@ -4,11 +4,16 @@ import PostList from '../../components/PostList.astro';
 import { CATEGORIES } from '../../content.config';
 import { getPosts } from '../../lib/posts';
 
-export function getStaticPaths() {
-  return Object.keys(CATEGORIES).map((category) => ({ params: { category } }));
+// a category page only exists while it has visible posts
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return Object.keys(CATEGORIES)
+    .filter((c) => posts.some((p) => p.data.category === c))
+    .map((category) => ({ params: { category } }));
 }
 const category = Astro.params.category as keyof typeof CATEGORIES;
-const posts = (await getPosts()).filter((p) => p.data.category === category);
+const allPosts = await getPosts();
+const posts = allPosts.filter((p) => p.data.category === category);
 const label = CATEGORIES[category];
 ---
 <Base title={label} description={`All posts in ${label}.`} noindex={category === 'book-notes'}>
@@ -16,7 +21,7 @@ const label = CATEGORIES[category];
     <p><a href="/blog/">← All posts</a></p>
     <h1>{label}</h1>
     <ul class="chips">
-      {Object.entries(CATEGORIES).map(([slug, l]) => (
+      {Object.entries(CATEGORIES).filter(([slug]) => allPosts.some((p) => p.data.category === slug)).map(([slug, l]) => (
         <li><a href={`/category/${slug}/`} aria-current={slug === category ? 'page' : undefined}>{l}</a></li>
       ))}
     </ul>

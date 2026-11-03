@@ -16,7 +16,8 @@ all content lives in this repository and is edited by changing files (usually by
 | Name, nav menu, "My Lists", social links, projects, newsletter links | `src/site.config.ts` |
 | Categories (allowed values) | `CATEGORIES` in `src/content.config.ts` |
 | Home / About / Newsletter pages | `src/pages/index.astro`, `about.astro`, `newsletter.astro` |
-| Startup Handbook entries | `sections` array in `src/pages/startup-handbook.astro` |
+| Startup Handbook (currently **hidden**) | `src/pages/_startup-handbook.astro` – the `_` prefix keeps it out of the build; rename to `startup-handbook.astro`, re-add it to `NAV` and remove its redirect in `astro.config.mjs` to show it again |
+| Instagram grid on the homepage | `src/data/instagram.json` + `public/images/instagram/`, updated daily by `.github/workflows/instagram.yml` |
 | Styling | `src/styles/global.css` |
 
 ## Article format
@@ -31,7 +32,7 @@ image: /images/2026/11/cover.jpg   # optional cover image (also the social previ
 imageAlt: "Description of the image"  # optional
 toc: true                   # optional, auto-generated table of contents from ## / ### headings
 noindex: true               # optional, hides from search engines + sitemap (used for book notes)
-draft: true                 # optional, only visible in `npm run dev`, not published
+draft: true                 # optional, hides the post: kept in the repo, visible in `npm run dev`, not published
 ---
 
 Article body in Markdown. Use `##` for sections and `###` for subsections (never `#` – the title is the H1).
@@ -46,4 +47,7 @@ Article body in Markdown. Use `##` for sections and `###` for subsections (never
 - YouTube embeds: `<div class="embed"><iframe src="https://www.youtube.com/embed/<id>" title="..." loading="lazy" allowfullscreen></iframe></div>`
 - Internal links use root-relative URLs with trailing slash: `/blog/creating-focus/`.
 - Book/podcast notes use `category: book-notes` and `noindex: true`. Everything else shows under "Recent Articles".
+- To hide a post without deleting it, add `draft: true`; to show it again, remove that line. All book notes are currently hidden this way.
+- Category pages and blog filter chips appear automatically only for categories that have visible posts.
+- Commit and push directly to `main` (Vercel deploys from `main`).
 - Keep the author's voice; change only what is asked. Run `npm run build` after changes.

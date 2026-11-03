@@ -5,6 +5,7 @@ date: 2024-09-27
 updated: 2025-02-17
 category: book-notes
 noindex: true
+draft: true
 ---
 
 These are my notes on the [Marketing Secrets Blackbook](https://www.goodreads.com/book/show/40941680-marketing-secrets-blackbook).

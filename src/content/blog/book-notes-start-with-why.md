@@ -5,6 +5,7 @@ date: 2024-01-02
 updated: 2025-02-17
 category: book-notes
 noindex: true
+draft: true
 ---
 
 These are my notes after reading [Start With Why by Simon Sinek](https://www.goodreads.com/?ref=nav_hom).

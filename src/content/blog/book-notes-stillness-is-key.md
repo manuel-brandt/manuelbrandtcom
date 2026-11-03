@@ -5,6 +5,7 @@ date: 2024-04-21
 updated: 2025-02-17
 category: book-notes
 noindex: true
+draft: true
 ---
 
 These are my notes after reading the book “[Stillness Is Key](https://www.goodreads.com/en/book/show/43582733)“.

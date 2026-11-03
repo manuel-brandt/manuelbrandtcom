@@ -5,6 +5,7 @@ date: 2023-06-23
 updated: 2025-02-17
 category: book-notes
 noindex: true
+draft: true
 ---
 
 Notes after reading the book “[Ikigai: The Japanese Secret to a Long and Happy Life”](https://www.goodreads.com/book/show/28787203-ikigai).

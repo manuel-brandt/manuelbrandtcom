@@ -5,6 +5,7 @@ date: 2024-04-21
 updated: 2026-01-28
 category: book-notes
 noindex: true
+draft: true
 ---
 
 These are my notes after reading the book “[The Almanack of Naval Ravikant](https://www.goodreads.com/book/show/54898389-the-almanack-of-naval-ravikant?ac=1&from_search=true&qid=XMVltUri87&rank=1)“.

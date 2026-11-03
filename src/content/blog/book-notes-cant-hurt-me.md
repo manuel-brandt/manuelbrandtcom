@@ -5,6 +5,7 @@ date: 2023-12-25
 updated: 2025-02-17
 category: book-notes
 noindex: true
+draft: true
 ---
 
 These are my notes on the book [Can’t Hurt Me](https://www.goodreads.com/book/show/41721428-can-t-hurt-me) by David Goggins.

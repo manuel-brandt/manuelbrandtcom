@@ -5,6 +5,7 @@ date: 2023-12-06
 updated: 2025-02-17
 category: book-notes
 noindex: true
+draft: true
 ---
 
 “Mans Search for Meaning” by Viktor Frankl is a profound book that delves into the author’s experiences in Nazi concentration camps and presents his psychological approach, known as logotherapy.

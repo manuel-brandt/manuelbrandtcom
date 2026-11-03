@@ -5,6 +5,7 @@ date: 2023-12-28
 updated: 2025-02-17
 category: book-notes
 noindex: true
+draft: true
 ---
 
 These are quick notes on a short book called [Nikola Tesla: Imagination and the Man That Invented the 20th Century](https://www.goodreads.com/book/show/17835351-nikola-tesla).

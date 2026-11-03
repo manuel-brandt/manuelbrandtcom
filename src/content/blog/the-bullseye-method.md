@@ -5,6 +5,7 @@ date: 2023-08-25
 updated: 2025-02-17
 category: book-notes
 noindex: true
+draft: true
 ---
 
 Notes after reading the book “[Traction: How Any Startup Can Achieve Explosive Customer Growth](https://www.goodreads.com/book/show/59819371-traction)“. The alternative version of the books is “[Traction: A Startup Guide to Getting Customers](https://www.goodreads.com/book/show/22091581-traction)“.

@@ -5,6 +5,7 @@ date: 2024-11-24
 updated: 2025-02-17
 category: book-notes
 noindex: true
+draft: true
 ---
 
 ### Money Blueprint

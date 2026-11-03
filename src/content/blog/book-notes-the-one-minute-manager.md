@@ -5,6 +5,7 @@ date: 2023-12-29
 updated: 2025-02-17
 category: book-notes
 noindex: true
+draft: true
 ---
 
 “[The One Minute Manager](https://www.goodreads.com/book/show/763362.The_One_Minute_Manager)” by Ken Blanchard and Spencer Johnson offers a simple yet effective management philosophy centered on three key techniques:

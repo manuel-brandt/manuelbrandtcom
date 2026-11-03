@@ -5,6 +5,7 @@ date: 2024-12-26
 updated: 2025-02-17
 category: book-notes
 noindex: true
+draft: true
 ---
 
 -   Figure out ways to lose, and do the opposite.

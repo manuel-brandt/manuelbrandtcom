@@ -5,6 +5,7 @@ date: 2024-01-29
 updated: 2025-02-17
 category: book-notes
 noindex: true
+draft: true
 ---
 
 These are my notes after reading the book [“Mastery” by Robert Greene](https://www.goodreads.com/book/show/13589182-mastery).

@@ -5,6 +5,7 @@ date: 2025-02-08
 updated: 2025-02-17
 category: book-notes
 noindex: true
+draft: true
 ---
 
 -   Deep work is very important in many professions

@@ -5,6 +5,7 @@ date: 2023-06-07
 updated: 2025-02-17
 category: book-notes
 noindex: true
+draft: true
 ---
 
 Notes after reading the book “[Zero to One](https://www.goodreads.com/book/show/18050143-zero-to-one)“.

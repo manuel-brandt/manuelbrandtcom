@@ -5,6 +5,7 @@ date: 2024-01-03
 updated: 2025-02-17
 category: book-notes
 noindex: true
+draft: true
 ---
 
 Hey there! Let’s dive into “[Anything You Want](https://www.goodreads.com/book/show/26200918-anything-you-want)” by Derek Sivers. Derek is a founder and CEO, sharing about his own journey of creating CD Baby, an online music store that revolutionized how independent music gets shared.

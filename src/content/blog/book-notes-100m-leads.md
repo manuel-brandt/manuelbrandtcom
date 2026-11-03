@@ -5,6 +5,7 @@ date: 2024-04-22
 updated: 2025-02-17
 category: book-notes
 noindex: true
+draft: true
 ---
 
 ![](/images/2024/04/100m-leads-book-summary-by-alex-hormozi-chart-graphic-1536x957-1-1024x638.png)

@@ -182,3 +182,16 @@ main { padding: 40px 0 72px; }
 .banner { border-radius: var(--radius); width: 100%; margin: 0 0 1.5rem; }
 .site-footer { text-align: center; color: var(--muted); font-size: 0.9rem; padding: 0 0 40px; }
 .site-footer a { color: var(--muted); }
+
+/* Instagram grid */
+.ig-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.ig-grid a { position: relative; display: block; aspect-ratio: 1; overflow: hidden; border-radius: 6px; background: var(--surface); }
+.ig-grid img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
+.ig-caption {
+  position: absolute; inset: auto 0 0 0; padding: 24px 10px 8px; color: #fff; font-size: 0.78rem; line-height: 1.35;
+  background: linear-gradient(transparent, rgba(0,0,0,.7)); opacity: 0; transition: opacity .2s ease;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
+}
+.ig-grid a:hover img, .ig-grid a:focus-visible img { transform: scale(1.04); }
+.ig-grid a:hover .ig-caption, .ig-grid a:focus-visible .ig-caption { opacity: 1; }
+@media (max-width: 560px) { .ig-grid { grid-template-columns: repeat(2, 1fr); } }

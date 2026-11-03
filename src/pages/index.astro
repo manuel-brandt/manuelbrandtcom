@@ -2,11 +2,11 @@
 import Base from '../layouts/Base.astro';
 import PostList from '../components/PostList.astro';
 import Icon from '../components/Icon.astro';
-import { SITE, PROJECTS, SOCIALS } from '../site.config';
+import InstagramGrid from '../components/InstagramGrid.astro';
+import { SITE, PROJECTS } from '../site.config';
 import { getPosts, isArticle } from '../lib/posts';
 
 const recent = (await getPosts()).filter(isArticle).slice(0, 3);
-const instagram = SOCIALS.find((s) => s.icon === 'instagram')!;
 ---
 <Base>
   <div class="wrap">
@@ -38,7 +38,6 @@ const instagram = SOCIALS.find((s) => s.icon === 'instagram')!;
     <p class="center"><a class="btn" href="/blog/">All Posts <Icon name="arrow" /></a></p>
 
     <h2 class="section-title">Find Me On Instagram 📸</h2>
-    <p>Photos from road trips, travels, and everyday life between Taiwan and Germany.</p>
-    <p><a class="btn" href={instagram.href} target="_blank" rel="noopener"><Icon name="instagram" /> @manuel_brandt</a></p>
+    <InstagramGrid />
   </div>
 </Base>

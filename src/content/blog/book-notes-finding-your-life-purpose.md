@@ -5,6 +5,7 @@ date: 2023-12-25
 updated: 2025-02-17
 category: book-notes
 noindex: true
+draft: true
 ---
 
 What I mainly find interesting about this short book by Mark Manson is his view on what is meaningful. I think everyone wants to do something meaningful, but to answer what is meaningful is hard.

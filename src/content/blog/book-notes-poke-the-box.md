@@ -5,6 +5,7 @@ date: 2024-01-03
 updated: 2025-02-17
 category: book-notes
 noindex: true
+draft: true
 ---
 
 These are my notes on the short book from Seth Godin called [Poke the Box](https://www.goodreads.com/book/show/10368067-poke-the-box).

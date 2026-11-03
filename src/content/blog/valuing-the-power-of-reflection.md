@@ -5,6 +5,7 @@ date: 2023-05-25
 updated: 2025-02-17
 category: book-notes
 noindex: true
+draft: true
 ---
 
 Notes after reading the book “[How Successful People Think](https://www.goodreads.com/book/show/6012533-how-successful-people-think)“.

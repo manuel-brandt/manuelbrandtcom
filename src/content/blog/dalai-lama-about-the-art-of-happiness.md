@@ -5,6 +5,7 @@ date: 2023-11-08
 updated: 2025-02-17
 category: book-notes
 noindex: true
+draft: true
 ---
 
 Notes after reading the book “[The Art of Happiness](https://www.goodreads.com/book/show/38210.The_Art_of_Happiness)“.

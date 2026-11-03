@@ -5,6 +5,7 @@ date: 2023-10-19
 updated: 2025-02-17
 category: book-notes
 noindex: true
+draft: true
 ---
 
 Notes after reading the book “[The Coaching Habit: Say Less, Ask More & Change the Way You Lead Forever](https://www.goodreads.com/book/show/29342515-the-coaching-habit)“.
